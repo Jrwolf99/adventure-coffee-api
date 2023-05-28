@@ -8,8 +8,12 @@ Bundler.require(*Rails.groups)
 
 module AdventureCoffeeApi
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.0
+
+    config.generators.test_framework :rspec
+
+    config.generators do |g|
+      g.test_framework :rspec
+    end
 
     # Configuration for the application, engines, and railties goes here.
     #
